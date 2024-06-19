@@ -1,8 +1,9 @@
-import CustomInput from "./components/CustomInput"
+
 import IconButton from "./components/IconButton"
 import  ArrowIcon from './assets/icon-arrow.svg?react';
 
 import DisplayAge from "./components/DisplayAge";
+import Form from "./components/Form";
 
 
 
@@ -13,25 +14,10 @@ function App() {
   return (
     <main className="font-poppins font-semibold h-screen w-screen bg-neutral-light-grey  px-4 overflow-scroll py-12 ">
       
-      <div className="bg-white px-6 lg:px-[56px] py-12 lg:max-w-[55.2rem] mx-auto rounded-3xl rounded-br-[100px] max-w-[25rem] transition-all ">
+      <div className="bg-white px-6 lg:px-[56px] py-12 lg:max-w-[55.2rem] mx-auto rounded-3xl rounded-br-[100px] lg:rounded-br-[200px] max-w-[25rem] transition-all ">
 
-          <div className=" flex justify-between lg:justify-start gap-8">
-            <div className="  flex flex-col">
-              <label htmlFor="day" className="font-400i text-neutral-smokey-grey text-xs lg:text-sm uppercase tracking-widest pb-1">Day</label>
-              <CustomInput/>
-            </div>
-
-            <div className="   flex flex-col">
-              <label htmlFor="day" className="font-400i text-neutral-smokey-grey text-xs lg:text-sm uppercase tracking-widest pb-1">Month</label>
-              <CustomInput/>
-            </div>
-
-            <div className="  flex flex-col ">
-              <label htmlFor="day" className="font-400i text-neutral-smokey-grey  text-xs lg:text-sm uppercase tracking-widest pb-1">Year</label>
-              <CustomInput/>
-            </div>
-          </div>
-
+   
+          <Form/>
        
           <div className=" my-8 relative">
             
