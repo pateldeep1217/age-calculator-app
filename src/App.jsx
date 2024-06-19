@@ -1,7 +1,6 @@
 import CustomInput from "./components/CustomInput"
-import arrowIcon from './assets/icon-arrow.svg'
-import ButtonArrow from "./components/ButtonArrow"
-
+import IconButton from "./components/IconButton"
+import  ArrowIcon from './assets/icon-arrow.svg?react';
 
 
 
@@ -30,7 +29,7 @@ function App() {
               <CustomInput/>
             </div>
           </div>
-        <ButtonArrow/>
+        <IconButton Icon={ArrowIcon}/>
           
 
       </div>
