@@ -1,6 +1,8 @@
 import CustomInput from "./components/CustomInput"
 import IconButton from "./components/IconButton"
 import  ArrowIcon from './assets/icon-arrow.svg?react';
+import AgeText from "./components/AgeText";
+import DisplayAge from "./components/DisplayAge";
 
 
 
@@ -9,9 +11,9 @@ function App() {
 
 
   return (
-    <main className="font-poppins h-screen w-screen bg-neutral-light-grey border">
+    <main className="font-poppins h-screen w-screen bg-neutral-light-grey  px-4 overflow-scroll py-12">
       
-      <div className="bg-white mt-20  p-5 w-[343px] lg:w-[840px] mx-auto rounded-3xl rounded-br-[100px]">
+      <div className="bg-white px-6 py-12 lg:max-w-[55.2rem] mx-auto rounded-3xl rounded-br-[100px] max-w-[25rem] transition-all ">
 
           <div className=" flex justify-between">
             <div className="  flex flex-col">
@@ -29,10 +31,21 @@ function App() {
               <CustomInput/>
             </div>
           </div>
-        <IconButton Icon={ArrowIcon}/>
+
+       
+          <div className=" my-8 relative">
+            
+            <div className="flex justify-center lg:justify-end">
+              <IconButton Icon={ArrowIcon} />
+            </div>
+          <div className="border-t border-neutral-light-grey absolute w-full top-8 z-0"></div>
+          </div>
+
+          <DisplayAge/>
+        </div>
           
 
-      </div>
+
 
       
     </main>
