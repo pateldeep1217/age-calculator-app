@@ -17,13 +17,9 @@ export default {
         '32px': '32px',
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins'],
       }, 
-      fontWeight: {
-        '400i': '400',
-        '700': '700',
-        '800i': '800',
-      },
+ 
       colors:{
         primary:{
           purple:'hsl(259, 100%, 65%)',
