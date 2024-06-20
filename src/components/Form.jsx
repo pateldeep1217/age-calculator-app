@@ -1,7 +1,25 @@
 import CustomInput from "./CustomInput";
 import IconButton from "./IconButton";
 import ArrowIcon from "../assets/icon-arrow.svg?react";
+import { useState } from "react";
 function Form() {
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+
+  const handleDayChange = (inputValue) => {
+    console.log(inputValue);
+    setDay(inputValue);
+  };
+
+  const handleMonthChange = (inputValue) => {
+    setMonth(inputValue);
+  };
+
+  const handleYearChange = (inputValue) => {
+    setYear(inputValue);
+  };
+
   return (
     <form>
       <div className="flex justify-between gap-8 lg:justify-start">
@@ -12,27 +30,25 @@ function Form() {
           >
             Day
           </label>
-          <CustomInput />
+          <CustomInput id="day" value={day} onChange={handleDayChange} />
         </div>
-
         <div className="flex flex-col">
           <label
-            htmlFor="day"
+            htmlFor="month"
             className="pb-1 text-xs uppercase tracking-widest text-neutral-smokey-grey lg:text-sm"
           >
             Month
           </label>
-          <CustomInput />
+          <CustomInput id="month" value={month} onChange={handleMonthChange} />
         </div>
-
         <div className="flex flex-col">
           <label
-            htmlFor="day"
+            htmlFor="year"
             className="pb-1 text-xs uppercase tracking-widest text-neutral-smokey-grey lg:text-sm"
           >
             Year
           </label>
-          <CustomInput />
+          <CustomInput id="year" value={year} onChange={handleYearChange} />
         </div>
       </div>
 

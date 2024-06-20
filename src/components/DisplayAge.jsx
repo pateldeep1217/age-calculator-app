@@ -1,6 +1,4 @@
-import React from "react";
 import AgeText from "./AgeText";
-
 function DisplayAge() {
   return (
     <div>
