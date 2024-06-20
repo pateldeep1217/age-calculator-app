@@ -1,35 +1,46 @@
 import CustomInput from "./CustomInput";
+import IconButton from "./IconButton";
+import ArrowIcon from "../assets/icon-arrow.svg?react";
 function Form() {
   return (
-    <form className=" flex justify-between lg:justify-start gap-8">
-      <div className="  flex flex-col">
-        <label
-          htmlFor="day"
-          className=" text-neutral-smokey-grey text-xs lg:text-sm uppercase tracking-widest pb-1"
-        >
-          Day
-        </label>
-        <CustomInput />
+    <form>
+      <div className="flex justify-between gap-8 lg:justify-start">
+        <div className="flex flex-col">
+          <label
+            htmlFor="day"
+            className="pb-1 text-xs uppercase tracking-widest text-neutral-smokey-grey lg:text-sm"
+          >
+            Day
+          </label>
+          <CustomInput />
+        </div>
+
+        <div className="flex flex-col">
+          <label
+            htmlFor="day"
+            className="pb-1 text-xs uppercase tracking-widest text-neutral-smokey-grey lg:text-sm"
+          >
+            Month
+          </label>
+          <CustomInput />
+        </div>
+
+        <div className="flex flex-col">
+          <label
+            htmlFor="day"
+            className="pb-1 text-xs uppercase tracking-widest text-neutral-smokey-grey lg:text-sm"
+          >
+            Year
+          </label>
+          <CustomInput />
+        </div>
       </div>
 
-      <div className="   flex flex-col">
-        <label
-          htmlFor="day"
-          className=" text-neutral-smokey-grey text-xs lg:text-sm uppercase tracking-widest pb-1"
-        >
-          Month
-        </label>
-        <CustomInput />
-      </div>
-
-      <div className="  flex flex-col ">
-        <label
-          htmlFor="day"
-          className=" text-neutral-smokey-grey  text-xs lg:text-sm uppercase tracking-widest pb-1"
-        >
-          Year
-        </label>
-        <CustomInput />
+      <div className="relative my-8">
+        <div className="flex justify-center lg:justify-end">
+          <IconButton Icon={ArrowIcon} />
+        </div>
+        <div className="absolute top-8 z-0 w-full border-t border-neutral-light-grey"></div>
       </div>
     </form>
   );

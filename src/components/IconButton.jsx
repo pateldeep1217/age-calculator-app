@@ -1,11 +1,9 @@
-
-
-function IconButton({Icon}) {
+function IconButton({ Icon }) {
   return (
-    <button className="bg-primary-purple w-[64px] h-[64px]  flex justify-center items-center rounded-full hover:bg-neutral-off-black  z-50">
-      <Icon/>
+    <button className="z-50 flex h-[64px] w-[64px] items-center justify-center rounded-full bg-primary-purple hover:bg-neutral-off-black">
+      <Icon />
     </button>
-  )
+  );
 }
 
-export default IconButton
+export default IconButton;
