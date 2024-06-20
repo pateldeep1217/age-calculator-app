@@ -3,7 +3,7 @@ import { useState } from "react";
 function CustomInput({ id, value, onChange }) {
   const handleChange = (e) => {
     const inputValue = e.target.value;
-    onChange(inputValue);
+    onChange(id, inputValue);
   };
   return (
     <input
