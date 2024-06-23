@@ -10,17 +10,14 @@ const validateDay = (value, getValues) => {
   }
 
   const day = parseInt(value, 10);
-  if (day < 1 || day > 31) {
-    return "Day must be between 1 and 31";
-  }
-
   const { month, year } = getValues();
+
   if (!month || !year) {
     return true;
   }
 
   const maxDaysInMonth = getMaxDaysInMonth(month, year);
-  if (day > maxDaysInMonth) {
+  if (day < 1 || day > maxDaysInMonth) {
     return `Day must be between 1 and ${maxDaysInMonth}`;
   }
 
