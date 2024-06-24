@@ -1,10 +1,10 @@
 import AgeText from "./AgeText";
-function DisplayAge() {
+function DisplayAge({ age }) {
   return (
     <div>
-      <AgeText value="--" unit="Years" />
-      <AgeText value="--" unit="Months" />
-      <AgeText value="--" unit="Days" />
+      <AgeText value={age.years ?? "--"} unit="Years" />
+      <AgeText value={age.months ?? "--"} unit="Months" />
+      <AgeText value={age.days ?? "--"} unit="Days" />
     </div>
   );
 }

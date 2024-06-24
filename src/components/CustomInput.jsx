@@ -23,7 +23,7 @@ function CustomInput({
           id={id}
           name={name}
           placeholder={placeholder}
-          className={`w-[87.67px] rounded-md border ${error ? "border-primary-light-red focus:border-primary-light-red" : "border-neutral-light-grey"} p-2 pl-2 pr-4 text-xl outline-none focus:border-primary-purple lg:w-[160px] lg:text-[2rem]`}
+          className={`w-[87.67px] rounded-md border ${error ? "border-primary-light-red" : "border-neutral-light-grey"} p-2 pl-2 pr-4 text-xl outline-none focus:border-primary-purple lg:w-[160px] lg:text-[2rem]`}
           {...register(name, {
             required: required ? "This field is required" : false,
             validate: validate,

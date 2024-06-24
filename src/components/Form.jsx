@@ -9,7 +9,7 @@ import {
   validateYear,
 } from "../utils/validationUtils";
 
-function Form() {
+function Form({ setAge }) {
   const {
     register,
     handleSubmit,
@@ -17,8 +17,31 @@ function Form() {
     getValues,
   } = useForm();
 
+  const calculateAge = (day, month, year) => {
+    const birthDate = new Date(year, month - 1, day);
+    const today = new Date();
+
+    let ageYears = today.getFullYear() - birthDate.getFullYear();
+    let ageMonths = today.getMonth() - birthDate.getMonth();
+    let ageDays = today.getDate() - birthDate.getDate();
+
+    if (ageDays < 0) {
+      ageMonths -= 1;
+      ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Get the last day of the previous month
+    }
+
+    if (ageMonths < 0) {
+      ageYears -= 1;
+      ageMonths += 12;
+    }
+    return { years: ageYears, months: ageMonths, days: ageDays };
+  };
+
   const onSubmit = (data) => {
-    console.log(data);
+    const { day, month, year } = data;
+
+    const age = calculateAge(day, month, year);
+    setAge(age);
   };
 
   return (
