@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DisplayAge from "./components/DisplayAge";
-import Form from "./components/Form";
+import Form from "./components/Form/Form";
 
 function App() {
   const [age, setAge] = useState({});

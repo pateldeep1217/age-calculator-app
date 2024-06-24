@@ -1,14 +1,6 @@
 import React from "react";
 
-function CustomInput({
-  id,
-  name,
-  placeholder,
-  register,
-  required,
-  validate,
-  error,
-}) {
+function CustomInput({ id, name, placeholder, register, error }) {
   return (
     <>
       <div className="flex flex-col">
@@ -24,14 +16,16 @@ function CustomInput({
           name={name}
           placeholder={placeholder}
           className={`w-[87.67px] rounded-md border ${error ? "border-primary-light-red" : "border-neutral-light-grey"} p-2 pl-2 pr-4 text-xl outline-none focus:border-primary-purple lg:w-[160px] lg:text-[2rem]`}
-          {...register(name, {
-            required: required ? "This field is required" : false,
-            validate: validate,
-          })}
+          {...register(name)}
+          aria-invalid={error ? "true" : "false"}
+          aria-describedby={`${id}-error`}
         />
       </div>
       {error && (
-        <p className="w-20 pt-2 text-xs font-thin text-primary-light-red lg:w-40 lg:text-sm">
+        <p
+          id={`${id}-error`}
+          className="w-20 pt-2 text-xs font-thin text-primary-light-red lg:w-40 lg:text-sm"
+        >
           {error}
         </p>
       )}

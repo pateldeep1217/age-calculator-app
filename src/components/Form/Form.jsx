@@ -1,21 +1,19 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import CustomInput from "./CustomInput";
 import IconButton from "./IconButton";
-import ArrowIcon from "../assets/icon-arrow.svg?react";
-import {
-  validateDay,
-  validateMonth,
-  validateYear,
-} from "../utils/validationUtils";
+import ArrowIcon from "../../assets/icon-arrow.svg?react";
+
+import schema from "./yupSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 function Form({ setAge }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const calculateAge = (day, month, year) => {
     const birthDate = new Date(year, month - 1, day);
@@ -53,8 +51,6 @@ function Form({ setAge }) {
             name="day"
             placeholder="DD"
             register={register}
-            validate={(value) => validateDay(value, getValues)}
-            required
             error={errors.day?.message}
           />
         </div>
@@ -65,8 +61,6 @@ function Form({ setAge }) {
             name="month"
             placeholder="MM"
             register={register}
-            validate={validateMonth}
-            required
             error={errors.month?.message}
           />
         </div>
@@ -77,8 +71,6 @@ function Form({ setAge }) {
             name="year"
             placeholder="YYYY"
             register={register}
-            validate={validateYear}
-            required
             error={errors.year?.message}
           />
         </div>
